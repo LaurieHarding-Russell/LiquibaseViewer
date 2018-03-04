@@ -18,8 +18,12 @@ def readChangeLogFile(file):
 
 def readChangeSet(element):
     changeSet = LiquibaseChangeSet()
-    changeSet.id = element.get("id")
-    changeSet.context = element.get("context")
+    if element.attrib["id"]:
+        changeSet.id = element.get("id")
+    if element.get("context"):
+        changeSet.context = element.get("context")
+    if element.get("author"):
+        changeSet.author = element.get("author")
     return changeSet
 
 

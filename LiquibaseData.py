@@ -5,5 +5,5 @@ class LiquibaseChangeLog(object):
 
 class LiquibaseChangeSet(object):
     id = ""
-    contcontextent = ""
-    
+    context = ""
+    author = ""

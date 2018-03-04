@@ -8,18 +8,17 @@ from LiquibaseData import LiquibaseChangeLog, LiquibaseChangeSet
 def createCommitLabel(commitsFrame):
     for changeSet in liquibaseData.changeSets:
         if isinstance(changeSet, LiquibaseChangeSet):
-            left = Label(commitsFrame, text=changeSet.context)
+            lineText = changeSet.id + " " + changeSet.context + " " + changeSet.author
+            left = Label(commitsFrame, text=lineText)
             left.pack()
         else:
             createCommitLabel(commitsFrame)
 
 xmlFile = ""
 if len(sys.argv) > 1:
-    print "test 1"
     xmlFile = sys.argv[1]
 else:
-    print "test 2"
-    exit(1);
+    exit(1)
 
 liquibaseData = LiquibaseXMLReader.readChangeLogFile(xmlFile)
 root = Tk()
