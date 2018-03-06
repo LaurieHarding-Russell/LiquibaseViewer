@@ -2,7 +2,7 @@
 
 import sys
 from Tkinter import *
-import LiquibaseXMLReader
+from liquibaseXML.LiquibaseXMLReader import readChangeLogFile
 from LiquibaseData import LiquibaseChangeLog, LiquibaseChangeSet
 
 def createCommitLabel(commitsFrame):
@@ -20,7 +20,7 @@ if len(sys.argv) > 1:
 else:
     exit(1)
 
-liquibaseData = LiquibaseXMLReader.readChangeLogFile(xmlFile)
+liquibaseData = readChangeLogFile(xmlFile)
 root = Tk()
 root.title('Liquibase Viewer')
 

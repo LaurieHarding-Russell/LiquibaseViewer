@@ -6,10 +6,10 @@ load(
 py_binary(
     name = "LiquibaseViewer",
     srcs = ["LiquibaseViewer.py"],
-    deps = [":LiquibaseXMLReader"]
+    deps = [
+        "//liquibaseXML:LiquibaseXMLReader",
+        "//liquibaseXML:LiquibaseXMLWriter"
+      ]
 )
 
-py_library (
-  name = "LiquibaseXMLReader",
-  srcs = ["LiquibaseXMLReader.py", "LiquibaseData.py"]
-)
+exports_files(["LiquibaseData.py"])
