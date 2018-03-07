@@ -3,6 +3,7 @@
 import sys
 from Tkinter import *
 from liquibaseXML.LiquibaseXMLReader import readChangeLogFile
+from liquibaseXML.LiquibaseXMLWriter import writeChangeLogFile
 from LiquibaseData import LiquibaseChangeLog, LiquibaseChangeSet
 
 def createCommitLabel(commitsFrame):
@@ -33,3 +34,5 @@ data = Canvas(root, bg="blue", height=250)
 data.pack(side = LEFT, fill="both")
 
 root.mainloop()
+
+writeChangeLogFile(liquibaseData)

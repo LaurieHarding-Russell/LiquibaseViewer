@@ -7,3 +7,4 @@ class LiquibaseChangeSet(object):
     id = ""
     context = ""
     author = ""
+    content = ""
